@@ -80,6 +80,7 @@ def main():
             # if total_sample == 2400:
             #     print('mark!')
 
+
         # 打印信息
         print('epoch: ', epoch)
         print("accuracy:", train_correct_sample / total_sample)
