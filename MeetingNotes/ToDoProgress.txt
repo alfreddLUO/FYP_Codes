@@ -1,0 +1,19 @@
+Transform Grad-CAM saliency Map into Hidden Markov Models
+
+有的图有不同数量的cluster
+
+Method1:
+take all the saliency sample point as 1;
+Each sample were assigned the possibility to 1/total_sample;
+Put it into Gaussian Mixture function;
+And Bayesian Gaussian Model;
+
+Method2:
+Each sample in the saliency map were given a weight;
+you need to sum up the weights within an area;
+Modify the weight;
+
+Project Report
+Data Processing Pipeline;
+Algorithm
+
