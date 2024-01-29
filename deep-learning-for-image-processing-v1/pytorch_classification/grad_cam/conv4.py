@@ -4,7 +4,6 @@ from sklearn.preprocessing import StandardScaler
 
 # 加载Grad-CAM生成的saliency map数据
 saliency_map = np.load("/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing/pytorch_classification/grad_cam/ResNet_IMAGE_Folder/DogSaliencyData/10000.npy")
-
 # 定义空间分割的参数
 n_segments = 3  # 将saliency map分割成3个部分
 saliency_map = saliency_map.reshape(-1, 3)
