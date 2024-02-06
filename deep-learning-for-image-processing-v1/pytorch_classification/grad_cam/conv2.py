@@ -35,15 +35,15 @@ plt.scatter(observations[:, 0], observations[:, 1], color='blue', alpha=0.5, lab
 plt.scatter(generated_samples[:, 0], generated_samples[:, 1], color='red', alpha=0.5, label='Generated Samples')
 plt.legend()
 plt.title("Gaussian Mixture Model")
-# plt.show()
+plt.show()
 
 
-transition_matrix = np.array([[0.7, 0.3], [0.4, 0.6]])
-initial_state_probabilities = np.array([0.5, 0.5])
-hmm_model = hmm.GaussianHMM(n_components=2, covariance_type="diag")
-hmm_model.startprob_ = initial_state_probabilities
-hmm_model.transmat_ = transition_matrix
-hmm_model.fit(observations)
+# transition_matrix = np.array([[0.7, 0.3], [0.4, 0.6]])
+# initial_state_probabilities = np.array([0.5, 0.5])
+# hmm_model = hmm.GaussianHMM(n_components=2, covariance_type="diag")
+# hmm_model.startprob_ = initial_state_probabilities
+# hmm_model.transmat_ = transition_matrix
+# hmm_model.fit(observations)
 
 
 
