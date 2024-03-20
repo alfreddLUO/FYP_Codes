@@ -1,5 +1,7 @@
 from hmmlearn import hmm
 import numpy as np
+import matplotlib.pyplot as plt
+
 
 # Load the saliency map from the specified file path
 saliency_map = np.load("/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing/pytorch_classification/grad_cam/ResNet_IMAGE_Folder/DogSaliencyData/10000.npy")
@@ -41,3 +43,16 @@ model.fit(sampled_coordinates)
 hidden_states = model.predict(sampled_coordinates)
 
 print("Hidden States:", hidden_states)
+
+
+# 获取隐藏状态的颜色映射
+colors = ['r', 'g', 'b']
+hidden_states_colors = [colors[state] for state in hidden_states]
+
+# 绘制采样的坐标点
+plt.scatter(sampled_coordinates[:, 0], sampled_coordinates[:, 1], c=hidden_states_colors)
+plt.legend()
+plt.title('HMM Hidden States')
+plt.xlabel('X coordinate')
+plt.ylabel('Y coordinate')
+plt.show()

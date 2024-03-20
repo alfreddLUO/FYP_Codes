@@ -18,7 +18,7 @@ samples = samples.reshape(-1, 3)  # Or reshape to the appropriate shape
 # Fit the GMM to the samples to estimate the GMM parameters
 gmm_model = GaussianMixture(n_components=3)
 gmm_model.fit(samples)
-
+print(gmm_model)
 # Access the estimated GMM parameters
 estimated_means = gmm_model.means_
 print("estimated means: ", estimated_means)
