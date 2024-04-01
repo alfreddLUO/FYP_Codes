@@ -37,7 +37,7 @@ def main():
     class_indict = json.load(json_file)
 
     # create model
-    model = MobileNetV2(num_classes=5).to(device)  # 实例化模型
+    model = MobileNetV2(num_classes=2).to(device)  # 实例化模型
     # load model weights
     model_weight_path = "./MobileNetV2.pth"
     model.load_state_dict(torch.load(model_weight_path, map_location=device))  # 载入训练好的权重
