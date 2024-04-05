@@ -85,8 +85,8 @@ def main():
         print(saved_image_dir)
         print(saved_img_path)
         visualization = show_cam_on_image(img.astype(dtype=np.float32) / 255., grayscale_cam, use_rgb=True)
-        #visualization_image = Image.fromarray((visualization * 255).astype(np.uint8))
-        #visualization_image.save(saved_img_path)
+        # visualization_image = Image.fromarray((visualization * 255).astype(np.uint8))
+        # visualization_image.save(saved_img_path)
 
         # plt.imshow(visualization)
         # plt.show()
