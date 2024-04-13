@@ -62,9 +62,6 @@ def main():
     # model = models.vgg16(pretrained=True)
     # target_layers = [model.features]
 
-    # model = models.resnet34(pretrained=True)
-    # target_layers = [model.layer4]
-
     model = models.regnet_y_800mf(pretrained=True)
     target_layers = [model.trunk_output]
 
