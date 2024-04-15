@@ -18,14 +18,8 @@ def main1():
     # model = models.vgg16(pretrained=True)
     target_layers = [model.features]
 
-    # model = models.resnet34(pretrained=True)
-    # target_layers = [model.layer4]
-
     # model = models.regnet_y_800mf(pretrained=True)
     # target_layers = [model.trunk_output]
-
-    # model = models.efficientnet_b0(pretrained=True)
-    # target_layers = [model.features]
 
     data_transform = transforms.Compose([transforms.ToTensor(),
                                          transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
@@ -34,12 +28,9 @@ def main1():
     assert os.path.exists(img_path), "file: '{}' dose not exist.".format(img_path)
     img = Image.open(img_path).convert('RGB')
     img = np.array(img, dtype=np.uint8)
-    # img = center_crop_img(img, 224)
 
-    # [C, H, W]
     img_tensor = data_transform(img)
-    # expand batch dimension
-    # [C, H, W] -> [N, C, H, W]
+
     input_tensor = torch.unsqueeze(img_tensor, dim=0)
 
     cam = GradCAM(model=model, target_layers=target_layers, use_cuda=False)
@@ -75,16 +66,12 @@ def main():
     # 获取目录下所有图像文件的路径
     image_paths = glob.glob(os.path.join(image_folder, '*.jpg'))
 
-    # 打印图像文件路径列表
     for image_path in tqdm(image_paths):
-        # print(image_path)
-        # 加载图像
         img_path = image_path
         assert os.path.exists(img_path), "file: '{}' does not exist.".format(img_path)
         img = Image.open(img_path).convert('RGB')
         img = np.array(img, dtype=np.uint8)
 
-        # 图像预处理
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
