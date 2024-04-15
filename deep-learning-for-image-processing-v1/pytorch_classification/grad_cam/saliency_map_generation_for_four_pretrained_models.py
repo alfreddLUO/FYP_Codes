@@ -60,8 +60,8 @@ def main():
     # target_layers = [model.features]
 
 
-    cat_image_folder = '/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatOriginalImage'
-    dog_image_folder = '/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/DogOriginalImage'
+    cat_image_folder = './deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatOriginalImage'
+    dog_image_folder = './deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/DogOriginalImage'
     image_folder = cat_image_folder
     # 获取目录下所有图像文件的路径
     image_paths = glob.glob(os.path.join(image_folder, '*.jpg'))
@@ -87,8 +87,8 @@ def main():
         grayscale_cam = grayscale_cam[0, :]
 
         directory_path, filename = os.path.split(image_path)
-        saved_cat_image_dir = "/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatImageWithMaps"
-        saved_dog_image_dir = "/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/DogImageWithMaps"
+        saved_cat_image_dir = "./deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatImageWithMaps"
+        saved_dog_image_dir = "./deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/DogImageWithMaps"
         saved_image_dir = saved_cat_image_dir
         saved_img_path = saved_image_dir + "/" + filename
         print(filename)
@@ -100,7 +100,7 @@ def main():
 
         # plt.imshow(visualization)
         # plt.show()
-        saved_cat_saliency_dir = "/Users/luopeiyuan/Desktop/FYP/FYP_Codes/deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatSaliencyData"
+        saved_cat_saliency_dir = "./deep-learning-for-image-processing-v1/pytorch_classification/grad_cam/RegNet_IMAGE_Folder/CatSaliencyData"
         saliency_file_name = filename.split('.')[1]
         saved_saliency_path = saved_cat_saliency_dir + "/" + saliency_file_name
         np.save(saved_saliency_path, visualization)
