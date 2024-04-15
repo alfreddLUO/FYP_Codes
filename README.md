@@ -2,6 +2,11 @@
 Final Year Project Codes
 My GitHub Link for my FYP Code: https://github.com/alfreddLUO/FYP_Codes
 
+## Environment SetUp
+```shell
+pip install -r requirements.txt
+```
+
 ## Model Training
 
 E.g Trainning ResNet Model
